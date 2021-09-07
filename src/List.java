@@ -3,18 +3,28 @@ public class List {
     Node head = null;
     Node tail = null;
 
-    public Node insertFormHead(Node n){
+    public boolean isEmpty(){
         if (head == null){
-            head = n;
-            tail = n;
+            return true;
+        }
+        return false;
+    }
+
+    public Node insertFormHead(String s){
+
+        Node node = new Node(s);
+
+        if (isEmpty()){
+            head = node;
+            tail = node;
 
             return head;
         }
 
-        head.previous = n;
-        n.next = head;
+        head.previous = node;
+        node.next = head;
 
-        head = n;
+        head = node;
 
         return head;
     }

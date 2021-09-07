@@ -6,6 +6,10 @@ class ListTest {
 
     @org.junit.jupiter.api.Test
     void insertFormHead() {
-        assertEquals("1", list.insertFormHead(new Node("1")).data);
+        assertEquals("1", list.insertFormHead("1"));
+        assertEquals("2", list.insertFormHead("2"));
+        assertEquals("3", list.insertFormHead("3"));
     }
+
+
 }
