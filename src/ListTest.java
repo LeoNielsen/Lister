@@ -20,4 +20,13 @@ class ListTest {
         assertEquals("3", list.insertFormHead("3").data);
     }
 
+    @Test
+    void printListFromHead() {
+        list.insertFormHead("1");
+        list.insertFormHead("2");
+        list.insertFormHead("3");
+
+        assertEquals("321",list.printFromHead());
+
+    }
 }
