@@ -63,4 +63,18 @@ public class List {
     }
 
 
+    public String printFromTail() {
+        String res = "";
+        Node n = tail;
+
+        if (isEmpty()){
+            return res;
+        }
+
+        while (n != null) {
+            res += n.data;
+            n = n.previous;
+        }
+        return res;
+    }
 }
