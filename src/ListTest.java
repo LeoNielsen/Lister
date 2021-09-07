@@ -44,6 +44,16 @@ class ListTest {
         list.insertFromHead("3");
 
         assertEquals("123",list.printFromTail());
+    }
 
+    @Test
+    void removeFromHead() {
+        list.insertFromHead("1");
+        list.insertFromHead("2");
+        list.insertFromHead("3");
+
+
+        assertEquals("3",list.removeFromHead());
+        assertEquals("21", list.printFromHead());
     }
 }

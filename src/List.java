@@ -77,4 +77,17 @@ public class List {
         }
         return res;
     }
+
+
+    public String removeFromHead() {
+        if (isEmpty()){
+            return "";
+        }
+        Node n = head;
+
+        n.next.previous = null;
+        head = n.next;
+
+        return n.data;
+    }
 }
