@@ -10,7 +10,7 @@ public class List {
         return false;
     }
 
-    public Node insertFormHead(String s){
+    public Node insertFromHead(String s){
 
         Node node = new Node(s);
 
@@ -38,9 +38,29 @@ public class List {
         }
 
         while (n != null) {
-            res = res + n.data;
+            res += n.data;
             n = n.next;
         }
         return res;
     }
+
+    public Node insertFromTail(String s) {
+        Node node = new Node(s);
+
+        if (isEmpty()){
+            head = node;
+            tail = node;
+
+            return tail;
+        }
+
+        tail.next = node;
+        node.previous = tail;
+
+        tail = node;
+
+        return tail;
+    }
+
+
 }
