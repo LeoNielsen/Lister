@@ -103,6 +103,21 @@ class ListTest {
     }
 
     @Test
+    void findNodeByData() {
+
+        list.insertFromHead("1");
+        list.insertFromHead("2");
+        list.insertFromHead("3");
+        list.insertFromHead("4");
+
+        assertEquals("4", list.findNode("4").data);
+        assertEquals("3", list.findNode("3").data);
+        assertEquals("2", list.findNode("2").data);
+        assertEquals("1", list.findNode("1").data);
+
+    }
+
+    @Test
     void removeNode() {
 
         assertEquals("", list.removeNode(2).data);
@@ -120,13 +135,22 @@ class ListTest {
         assertEquals("3", list.removeNode(2).data);
 
         assertEquals("5421", list.printFromHead());
+    }
+    @Test
+    void removeNodeByData() {
 
+        list.insertFromHead("1");
 
+        assertEquals("1", list.removeNode("1").data);
 
+        list.insertFromHead("1");
+        list.insertFromHead("2");
+        list.insertFromHead("3");
+        list.insertFromHead("4");
+        list.insertFromHead("5");
 
+        assertEquals("3", list.removeNode("3").data);
 
-
-
-
+        assertEquals("5421", list.printFromHead());
     }
 }

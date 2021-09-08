@@ -136,6 +136,18 @@ public class List {
 
         return node;
     }
+    public Node findNode(String data){
+        if (isEmpty()){
+            return new Node("");
+        }
+
+        Node node = head;
+
+        while (node.data != data){
+         node = node.next;
+        }
+        return node;
+    }
 
     public Node removeNode(int i){
         Node node = findNode(i);
@@ -150,10 +162,29 @@ public class List {
             return node;
         }
 
+        return takeOutNode(node);
+    }
+    public Node removeNode(String data) {
+        Node node = findNode(data);
+
+        if (node == head) {
+            removeFromHead();
+        }
+        if (node == tail) {
+            removeFromTail();
+        }
+        if (node.next == null) {
+            return node;
+        }
+
+        return takeOutNode(node);
+    }
+
+    private Node takeOutNode(Node node){
         node.next.previous = node.previous;
         node.previous.next = node.next;
 
-        node.next =null;
+        node.next = null;
         node.previous = null;
 
         return node;
