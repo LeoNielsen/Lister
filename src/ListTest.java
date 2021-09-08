@@ -104,5 +104,29 @@ class ListTest {
 
     @Test
     void removeNode() {
+
+        assertEquals("", list.removeNode(2).data);
+
+        list.insertFromHead("1");
+
+        assertEquals("1", list.removeNode(0).data);
+
+        list.insertFromHead("1");
+        list.insertFromHead("2");
+        list.insertFromHead("3");
+        list.insertFromHead("4");
+        list.insertFromHead("5");
+
+        assertEquals("3", list.removeNode(2).data);
+
+        assertEquals("5421", list.printFromHead());
+
+
+
+
+
+
+
+
     }
 }

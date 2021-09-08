@@ -120,7 +120,7 @@ public class List {
     }
 
     public Node findNode(int i){
-        if (head == null){
+        if (isEmpty()){
             return new Node("");
         }
 
@@ -138,9 +138,25 @@ public class List {
     }
 
     public Node removeNode(int i){
+        Node node = findNode(i);
 
+        if (node == head){
+            removeFromHead();
+        }
+        if (node == tail){
+            removeFromTail();
+        }
+        if(node.next == null){
+            return node;
+        }
 
-        return null;
+        node.next.previous = node.previous;
+        node.previous.next = node.next;
+
+        node.next =null;
+        node.previous = null;
+
+        return node;
     }
 
 }
