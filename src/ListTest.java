@@ -48,22 +48,37 @@ class ListTest {
 
     @Test
     void removeFromHead() {
+        Node n = new Node("");
+
+        assertEquals(n.data, list.removeFromHead().data);
+
         list.insertFromHead("1");
+
+        assertEquals("1",list.removeFromHead().data);
+
         list.insertFromHead("2");
         list.insertFromHead("3");
 
+        assertEquals("3",list.removeFromHead().data);
 
-        assertEquals("3",list.removeFromHead());
-        assertEquals("21", list.printFromHead());
+        assertEquals("2", list.printFromHead());
     }
     @Test
     void removeFromTail() {
-        list.insertFromHead("1");
-        list.insertFromHead("2");
-        list.insertFromHead("3");
+        Node n = new Node("");
+
+        assertEquals(n.data, list.removeFromTail().data);
+
+        list.insertFromTail("2");
+
+        assertEquals("2",list.removeFromTail().data);
+
+        list.insertFromTail("1");
+        list.insertFromTail("3");
+
+        assertEquals("3",list.removeFromTail().data);
 
 
-        assertEquals("1",list.removeFromTail());
-        assertEquals("23", list.printFromTail());
+        assertEquals("1", list.removeFromTail().data);
     }
 }

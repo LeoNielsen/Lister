@@ -79,27 +79,44 @@ public class List {
     }
 
 
-    public String removeFromHead() {
+    public Node removeFromHead() {
         if (isEmpty()){
-            return "";
+            return new Node("");
         }
         Node n = head;
+
+        if (head == tail){
+            head = null;
+            tail = null;
+
+            return n;
+        }
+
 
         n.next.previous = null;
         head = n.next;
 
-        return n.data;
+        return n;
     }
 
-    public String removeFromTail() {
+    public Node removeFromTail() {
         if (isEmpty()){
-            return "";
+            return new Node("");
         }
         Node n = tail;
+
+        if (tail == head){
+            tail = null;
+            head = null;
+
+            return n;
+        }
+
+
 
         n.previous.next = null;
         tail = n.previous;
 
-        return n.data;
+        return n;
     }
 }
