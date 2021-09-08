@@ -118,4 +118,29 @@ public class List {
 
         return n;
     }
+
+    public Node findNode(int i){
+        if (head == null){
+            return new Node("");
+        }
+
+        Node node = head;
+
+        for (int j = 0; j < i; j++) {
+            node = node.next;
+
+            if(node == null){
+                return new Node("");
+            }
+        }
+
+        return node;
+    }
+
+    public Node removeNode(int i){
+
+
+        return null;
+    }
+
 }

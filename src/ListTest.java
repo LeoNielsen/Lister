@@ -81,4 +81,28 @@ class ListTest {
 
         assertEquals("1", list.removeFromTail().data);
     }
+
+    @Test
+    void findNode() {
+
+        assertEquals("", list.findNode(0).data);
+
+
+        list.insertFromHead("1");
+        list.insertFromHead("2");
+        list.insertFromHead("3");
+        list.insertFromHead("4");
+
+        assertEquals("4", list.findNode(0).data);
+        assertEquals("3", list.findNode(1).data);
+        assertEquals("2", list.findNode(2).data);
+        assertEquals("1", list.findNode(3).data);
+        assertEquals("", list.findNode(4).data);
+        assertEquals("", list.findNode(6).data);
+
+    }
+
+    @Test
+    void removeNode() {
+    }
 }
