@@ -153,4 +153,18 @@ class ListTest {
 
         assertEquals("5421", list.printFromHead());
     }
+
+    @Test
+    void addNode() {
+        list.insertFromHead("1");
+        list.insertFromHead("2");
+        list.insertFromHead("4");
+        list.insertFromHead("5");
+
+        assertEquals("3", list.addNode(new Node("3"),"2").data);
+
+        assertEquals("54321", list.printFromHead());
+
+
+    }
 }

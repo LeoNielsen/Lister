@@ -190,4 +190,16 @@ public class List {
         return node;
     }
 
+    public Node addNode(Node newNode, String data){
+        Node node = findNode(data);
+
+        newNode.next = node;
+        newNode.previous = node.previous;
+
+        newNode.previous.next = newNode;
+        node.previous = newNode;
+
+        return newNode;
+    }
+
 }
