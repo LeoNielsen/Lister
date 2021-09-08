@@ -4,10 +4,7 @@ public class List {
     Node tail = null;
 
     public boolean isEmpty(){
-        if (head == null){
-            return true;
-        }
-        return false;
+        return head == null;
     }
 
     public Node insertFromHead(String s){
@@ -92,9 +89,10 @@ public class List {
             return n;
         }
 
+        head = n.next;
 
         n.next.previous = null;
-        head = n.next;
+        n.next = null;
 
         return n;
     }
@@ -113,9 +111,10 @@ public class List {
         }
 
 
+        tail = n.previous;
 
         n.previous.next = null;
-        tail = n.previous;
+        n.previous = null;
 
         return n;
     }
